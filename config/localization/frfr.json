@@ -1,0 +1,90 @@
+{
+	"id": "prakash-portfolio",
+	"navbarMenu": {
+		"labelHome": "HOME",
+		"labelServices": "SERVICES",
+		"labelAboutMe": "ABOUT ME",
+		"labelPortifolio": "PROJECTS",
+		"labelExperience": "EXPERIENCE"
+	},
+	"landingPage": {
+		"apresentationText": "I am,",
+		"resumeText": "👨‍💻 Senior Java Developer with 5+ years of experience in enterprise application development using Spring Boot, Angular, and cloud technologies. 🚀 Specialized in microservices architecture, RESTful APIs, and full-stack development with expertise in AWS, Azure, and containerization technologies. 💡 Proven track record in healthcare technology solutions with strong skills in Agile methodologies and modern development practices.",
+		"buttonText": "About Me"
+	},
+	"servicesOffer": {
+		"title": "My Services",
+		"cards": {
+			"backend": {
+				"title": "Backend Development",
+				"contentText": "Expert in Java 11/17, Spring Boot, Spring Framework, and microservices architecture. Specialized in building scalable enterprise applications with RESTful APIs, Spring Security, and ORM frameworks like Hibernate."
+			},
+			"frontend": {
+				"title": "Frontend Development",
+				"contentText": "Proficient in Angular 11/18, TypeScript, JavaScript, HTML5, CSS3, and Bootstrap. Creating responsive and user-friendly interfaces with modern frontend technologies and best practices."
+			},
+			"cloud": {
+				"title": "Cloud Solutions",
+				"contentText": "Extensive experience with AWS (EC2, S3, RDS, Lambda, SQS, SNS) and Azure (AKS, Functions, Blob Storage). Expert in cloud-native architectures, containerization with Docker, and orchestration with Kubernetes."
+			},
+			"microservices": {
+				"title": "Microservices Architecture",
+				"contentText": "Designing and implementing scalable microservices using Spring Boot and Quarkus frameworks. Expert in distributed systems, API gateway patterns, and service mesh architectures."
+			},
+			"devops": {
+				"title": "DevOps & CI/CD",
+				"contentText": "Proficient in Maven build automation, Jenkins CI/CD pipelines, Git version control, and deployment strategies. Experience with monitoring tools like Datadog, Splunk, and code quality tools like SonarQube."
+			}
+		}
+	},
+	"aboutMePage": {
+		"title": "WHO AM I?",
+		"paragraph_one": "I am a Senior Java Developer with over 5 years of experience in enterprise software development, currently working at Elevance Health in Indianapolis, where I lead full-stack development initiatives for healthcare applications.",
+		"paragraph_two": "My expertise spans the entire software development lifecycle, from designing microservices architectures using Spring Boot and Quarkus to creating responsive frontend applications with Angular 11/18. I have extensive experience with cloud technologies, particularly AWS and Azure, where I implement scalable, cloud-native solutions using Docker and Kubernetes.",
+		"paragraph_three": "I'm passionate about building robust, secure, and scalable applications. My technical projects range from enterprise PDF processing systems to real-time chat applications and e-commerce platforms. I believe in continuous learning and staying updated with the latest technologies and best practices in software development.",
+		"github_card": {
+			"followers": "followers",
+			"following": "following",
+			"repos": "repos"
+		},
+		"alt_dev_img": "Prakash Kafle"
+	},
+	"portifolioPage": {
+		"title": "PROJECTS",
+		"labelFilter": "ALL",
+		"createdLabel": "Created on"
+	},
+	"experiencePage": {
+		"title": "EXPERIENCE AND EDUCATION",
+		"timeline": {
+			"labelPosition": "Position",
+			"labelTitle": "Title",
+			"labelCompany": "Company",
+			"labelCategory": "Category",
+			"labelInstitution": "Institution",
+			"labelProfessionalCourse": "Professional Course",
+			"labelBachelorDegree": "Bachelor's Degree",
+			"labelExtensionCourse": "Extension Course"
+		}
+	},
+	"footer": {
+		"labelNavigation": {
+			"title": "Navigation",
+			"labelHome": "Home",
+			"labelServices": "Services",
+			"labelAboutMe": "About Me",
+			"labelPortifolio": "Projects",
+			"labelExperience": "Experience"
+		},
+		"labelHost": {
+			"title": "HOSTING"
+		},
+		"labelSourceCode": {
+			"title": "SOURCE CODE"
+		},
+		"labelTechs": {
+			"title": "TECHNOLOGIES"
+		},
+		"labelBuildVersion": "Version"
+	}
+}
