@@ -7,19 +7,6 @@ const nextConfig = {
 	eslint: {
 		ignoreDuringBuilds: true,
 	},
-	
-	// ✅ ADD: Help with SSR issues
-	images: {
-		unoptimized: true
-	},
-	
-	// ✅ ADD: Transpile problematic packages
-	transpilePackages: ['react-type-animation', 'lottie-react', 'react-awesome-reveal'],
-	
-	// ✅ ADD: Handle ESM modules better
-	experimental: {
-		esmExternals: false
-	},
 
 	webpack: (config, options) => {
 		config.module.rules.push({

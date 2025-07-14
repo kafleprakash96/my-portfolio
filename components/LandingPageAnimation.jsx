@@ -1,12 +1,17 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import styled from "styled-components";
-import Lottie from "lottie-react";
 import { useTheme } from "styled-components";
+import dynamic from "next/dynamic";
+
+// ✅ Dynamic import for Lottie
+const Lottie = dynamic(() => import("lottie-react"), { 
+  ssr: false,
+  loading: () => <div>Loading animation...</div>
+});
 
 //Lotties
 import AnimationYellowBackground from "@/public/lotties/landing-page-yellow.json";
 import AnimationLightBackground from "@/public/lotties/landing-page-light.json";
-
 
 const ContainerLottie = styled.div`
 	width: 600px;
@@ -43,7 +48,13 @@ export default function LogoReact() {
 	const theme = useTheme();
 	const [isStopped] = useState(false);
 	const [isPaused] = useState(false);
+	const [isClient, setIsClient] = useState(false);
 	const lottieRef = useRef();
+
+	// ✅ Ensure we're on client side
+	useEffect(() => {
+		setIsClient(true);
+	}, []);
 
 	var defaultOptions = {
 		loop: true,
@@ -54,20 +65,10 @@ export default function LogoReact() {
 		},
 	};
 
-	// return (
-	// 	<ContainerLottie>
-	// 		<Lottie
-	// 			style={{ height: "100%", width: "100%" }}
-	// 			animationData={defaultOptions.animationData}
-	// 			play={!isStopped}
-	// 			pause={isPaused}
-	// 			loop={defaultOptions.loop}
-	// 			autoplay={defaultOptions.autoplay}
-	// 			rendererSettings={defaultOptions.rendererSettings}
-	// 			hover={false}
-	// 		/>
-	// 	</ContainerLottie>
-	// );
+	// ✅ Don't render Lottie until client-side
+	if (!isClient) {
+		return <ContainerLottie><div>Loading animation...</div></ContainerLottie>;
+	}
 
 	return (
 		<ContainerLottie>

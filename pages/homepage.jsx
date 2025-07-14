@@ -2,20 +2,42 @@ import React, { useContext } from "react";
 
 //Third's librarys
 import styled, { keyframes } from "styled-components";
-import { TypeAnimation } from "react-type-animation";
 import { useTheme } from "styled-components";
-import ProgressBar from "react-scroll-progress-bar";
+import dynamic from "next/dynamic";
 
 //Custom components
 import Head from "@/components/Head";
 import SocialNetworkRowStack from "@/components/SocialNetworkRowStack";
-import LogoReact from "@/components/LandingPageAnimation";
-import FloatNavigationBar from "@/components/FloatNavigationBar";
-import ScrollDownAnimation from "@/components/ScrollDownAnimation";
 import { scrollToSection } from "@/components/SmoothScroll";
 
 //Context
 import { SettingsContext } from "@/context/SettingsContext";
+
+// ✅ DYNAMIC IMPORTS - Client-only components
+const TypeAnimation = dynamic(() => 
+  import("react-type-animation").then(mod => ({ default: mod.TypeAnimation })), 
+  { 
+    ssr: false,
+    loading: () => <div className="type-string" style={{minHeight: '72px', color: 'transparent'}}>Loading...</div>
+  }
+);
+
+const ProgressBar = dynamic(() => import("react-scroll-progress-bar"), { 
+  ssr: false 
+});
+
+const LogoReact = dynamic(() => import("@/components/LandingPageAnimation"), { 
+  ssr: false,
+  loading: () => <div style={{width: '600px', height: '600px'}}></div>
+});
+
+const FloatNavigationBar = dynamic(() => import("@/components/FloatNavigationBar"), { 
+  ssr: false 
+});
+
+const ScrollDownAnimation = dynamic(() => import("@/components/ScrollDownAnimation"), { 
+  ssr: false 
+});
 
 // Animated background effect
 const float = keyframes`
@@ -286,7 +308,9 @@ export default function HomePage() {
 	return (
 		<SectionHomePage id="section-home">
 			<FloatNavigationBar />
-			<ProgressBar bgcolor={theme.colors.branding} height={5} />
+			{typeof window !== 'undefined' && (
+				<ProgressBar bgcolor={theme.colors.branding} height={5} />
+			)}
 			<LandingPageContainer>
 				<TitleLandingContainer>
 					<SubTitleLanding>{language.landingPage.apresentationText}</SubTitleLanding>
